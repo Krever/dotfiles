@@ -72,7 +72,7 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
 alias vi=vim
-
+alias emacs="emacs -nw"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
