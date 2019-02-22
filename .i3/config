@@ -10,6 +10,12 @@ set $mod Mod4
 exec rescuetime
 exec jetbrains-toolbox
 
+## quick terminal
+exec --no-startup-id urxvt -name metask
+for_window [instance="metask"] floating enable;
+for_window [instance="metask"] move scratchpad; [instance="metask"] scratchpad show; resize set height 90 ppt; resize set width 90 ppt; move position center; move scratchpad
+bindsym $mod+Return [instance="metask"] scratchpad show
+
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 new_window pixel 1
 new_float normal
@@ -30,7 +36,7 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminal
+#bindsym $mod+Return exec terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
