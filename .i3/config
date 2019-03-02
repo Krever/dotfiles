@@ -9,6 +9,10 @@ set $mod Mod4
 
 exec rescuetime
 exec jetbrains-toolbox
+exec emacs --daemon
+
+# fix intellij
+#focus_follows_mouse no
 
 ## quick terminal
 exec --no-startup-id urxvt -name metask
@@ -291,7 +295,8 @@ exec --no-startup-id clipit
 # exec_always --no-startup-id sbxkb
 exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
-exec --no-startup-id xautolock -time 10 -locker blurlock
+# exec --no-startup-id xautolock -time 10 -locker blurlock
+exec --no-startup-id xidlehook --not-when-fullscreen --not-when-audio --timer normal 600 'blurlock'
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 

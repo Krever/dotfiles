@@ -71,8 +71,26 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
+
+export PATH="$PATH:$HOME/bin:$HOME/.local/bin:$HOME/.gem/ruby/2.6.0/bin"
+export EDITOR="emacs -nw"
+
 alias vi=vim
-alias emacs="emacs -nw"
+alias emacs="emacsclient -t"
+
+# alt-f trigger nnn -i
+bindkey -s "^[f" "^Q echo; NNN_SHOW_HIDDEN=1 NNN_NO_AUTOSELECT=1 nnn -i^J"
+export NNN_USE_EDITOR=1
+
+# enable thefuck
+eval $(thefuck --alias --enable-experimental-instant-mode)
+
+# for mkvirtualence
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+source $HOME/.local/bin/virtualenvwrapper.sh
+
+
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -101,3 +119,6 @@ alias emacs="emacs -nw"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+
+# added by travis gem
+[ -f /home/krever/.travis/travis.sh ] && source /home/krever/.travis/travis.sh
